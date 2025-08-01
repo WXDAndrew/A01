@@ -40,7 +40,7 @@ const FollowSection = () => {
       author: 'ASONIC Ecuador',
       time: '2 horas',
       content: '¡Gracias a todos los que participaron en nuestro Bingo Solidario! Juntos recaudamos fondos para seguir apoyando a más familias. 💙',
-      image: 'https://images.pexels.com/photos/6995301/pexels-photo-6995301.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
       likes: 245,
       comments: 18,
       shares: 12
@@ -54,7 +54,7 @@ const FollowSection = () => {
       author: '@asonic_ecuador',
       time: '5 horas',
       content: 'Momentos de alegría en nuestro hogar de paso. Los niños disfrutando de actividades recreativas que les brindan esperanza. ✨ #EsperanzaParaTodos',
-      image: 'https://images.pexels.com/photos/6995312/pexels-photo-6995312.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600',
       likes: 189,
       comments: 24,
       shares: 8
@@ -68,7 +68,7 @@ const FollowSection = () => {
       author: 'ASONIC Ecuador',
       time: '1 día',
       content: 'Conoce la historia de María, una pequeña guerrera que nos enseña el verdadero significado de la valentía. Su sonrisa ilumina nuestros días.',
-      image: 'https://images.pexels.com/photos/6995320/pexels-photo-6995320.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
       likes: 156,
       comments: 31,
       shares: 15,
@@ -84,7 +84,7 @@ const FollowSection = () => {
       author: 'ASONIC Ecuador',
       time: '2 días',
       content: 'Nuestro equipo de voluntarios trabajando incansablemente para brindar el mejor cuidado. Cada gesto de amor marca la diferencia. 🤗',
-      image: 'https://images.pexels.com/photos/6995325/pexels-photo-6995325.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600',
       likes: 198,
       comments: 22,
       shares: 9
@@ -98,7 +98,7 @@ const FollowSection = () => {
       author: '@asonic_ecuador',
       time: '3 días',
       content: 'Taller de arte terapia en acción. Los niños expresan sus emociones a través del color y la creatividad. 🎨 #ArteQuesSana',
-      image: 'https://images.pexels.com/photos/6995330/pexels-photo-6995330.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
       likes: 167,
       comments: 19,
       shares: 6
@@ -146,17 +146,16 @@ const FollowSection = () => {
           <div className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
-            <div className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-3xl p-8 h-96 flex items-center justify-center shadow-lg">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-orange-300 to-yellow-300 rounded-full mx-auto mb-6 shadow-lg flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">👶</span>
-                </div>
-                <p className="text-gray-700 font-medium">
-                  Espacio reservado para imagen del niño
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  (Imagen PNG a subir posteriormente)
-                </p>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-96">
+              <img 
+                src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                alt="Niños en ASONIC"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Síguenos en nuestras redes</h3>
+                  <p className="text-lg opacity-90">Conoce las historias de esperanza</p>
               </div>
             </div>
           </div>

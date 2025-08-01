@@ -107,15 +107,19 @@ const Footer = () => {
               Ubicación
             </h4>
             <div className="bg-gray-800 rounded-2xl p-4 shadow-lg">
-              <div className="aspect-video bg-gray-700 rounded-xl flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-400 text-sm">
-                    Mapa de Google Maps
-                  </p>
-                  <p className="text-gray-500 text-xs">
-                    (Se integrará posteriormente)
-                  </p>
+              <div className="aspect-video bg-gray-700 rounded-xl overflow-hidden mb-4 relative">
+                <img 
+                  src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  alt="Ubicación ASONIC"
+                  className="w-full h-full object-cover opacity-60"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <MapPin className="w-12 h-12 text-white mx-auto mb-2" />
+                    <p className="text-white text-sm font-semibold">
+                      Nuestra Ubicación
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="text-sm text-gray-300">

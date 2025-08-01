@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.8), rgba(88, 28, 135, 0.7)), url('https://images.pexels.com/photos/6995301/pexels-photo-6995301.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1')`
+          backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.8), rgba(88, 28, 135, 0.7)), url('https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1')`
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
