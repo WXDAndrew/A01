@@ -85,3 +85,18 @@ a:focus {
   outline: 2px solid #3B82F6;
   outline-offset: 2px;
 }
+/* Mejoras para el dropdown de compartir */
+.group:hover .group-hover\:delay-200 {
+  transition-delay: 200ms;
+}
+
+.hover\:delay-0:hover {
+  transition-delay: 0ms;
+}
+
+/* Mantener el dropdown visible cuando se hace hover sobre él */
+.group:hover .group-hover\:pointer-events-auto,
+.group .group-hover\:pointer-events-auto:hover {
+  pointer-events: auto;
+  opacity: 1;
+}

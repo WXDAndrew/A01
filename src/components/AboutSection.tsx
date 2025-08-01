@@ -26,7 +26,13 @@ const AboutSection = () => {
       id: 'quienes-somos',
       title: '¿Quiénes Somos?',
       icon: Users,
-      position: 'top-0 left-1/4',
+      position: { top: '10%', left: '20%' },
+      colors: {
+        bg: 'from-blue-500 to-cyan-500',
+        border: 'border-blue-400',
+        text: 'text-blue-600',
+        sectionBg: 'from-blue-50 via-cyan-50 to-blue-100'
+      },
       content: {
         title: 'Quiénes Somos',
         description: 'ASONIC es una organización sin fines de lucro fundada en 1998 por padres de familia que vivieron la experiencia del cáncer infantil. Somos una gran familia unida por el amor y la esperanza, trabajando incansablemente para que ningún niño enfrente esta batalla solo.',
@@ -37,7 +43,13 @@ const AboutSection = () => {
       id: 'que-hacemos',
       title: '¿Qué Hacemos?',
       icon: Heart,
-      position: 'top-1/4 right-0',
+      position: { top: '25%', right: '15%' },
+      colors: {
+        bg: 'from-pink-500 to-rose-500',
+        border: 'border-pink-400',
+        text: 'text-pink-600',
+        sectionBg: 'from-pink-50 via-rose-50 to-pink-100'
+      },
       content: {
         title: 'Qué Hacemos',
         description: 'Brindamos apoyo integral a las familias de niños con cáncer: hogar de paso gratuito, apoyo emocional, acompañamiento médico, actividades recreativas y programas de reinserción social. Cada servicio está diseñado con amor y profesionalismo.',
@@ -48,7 +60,13 @@ const AboutSection = () => {
       id: 'mision',
       title: 'Misión',
       icon: Target,
-      position: 'bottom-1/4 right-1/4',
+      position: { top: '60%', right: '25%' },
+      colors: {
+        bg: 'from-emerald-500 to-teal-500',
+        border: 'border-emerald-400',
+        text: 'text-emerald-600',
+        sectionBg: 'from-emerald-50 via-teal-50 to-emerald-100'
+      },
       content: {
         title: 'Nuestra Misión',
         description: 'Brindar apoyo integral a las familias de niños diagnosticados con cáncer, proporcionando un hogar de paso gratuito, apoyo emocional y recursos necesarios durante el proceso de tratamiento, promoviendo la esperanza y mejorando su calidad de vida.',
@@ -59,7 +77,13 @@ const AboutSection = () => {
       id: 'vision',
       title: 'Visión',
       icon: Eye,
-      position: 'bottom-0 left-1/3',
+      position: { bottom: '20%', left: '25%' },
+      colors: {
+        bg: 'from-purple-500 to-violet-500',
+        border: 'border-purple-400',
+        text: 'text-purple-600',
+        sectionBg: 'from-purple-50 via-violet-50 to-purple-100'
+      },
       content: {
         title: 'Nuestra Visión',
         description: 'Ser la organización líder en Ecuador en el apoyo integral a familias de niños con cáncer, reconocida por nuestro compromiso, transparencia y impacto positivo en la vida de nuestros beneficiarios, contribuyendo a un futuro donde ningún niño enfrente el cáncer sin apoyo.',
@@ -70,7 +94,13 @@ const AboutSection = () => {
       id: 'valores',
       title: 'Valores',
       icon: Star,
-      position: 'top-1/3 left-0',
+      position: { top: '45%', left: '10%' },
+      colors: {
+        bg: 'from-amber-500 to-orange-500',
+        border: 'border-amber-400',
+        text: 'text-amber-600',
+        sectionBg: 'from-amber-50 via-orange-50 to-amber-100'
+      },
       content: {
         title: 'Nuestros Valores',
         description: 'Amor incondicional, solidaridad, transparencia, respeto, compromiso y esperanza. Estos valores guían cada una de nuestras acciones y nos permiten crear un ambiente de confianza y calidez para todas las familias que llegan a nosotros.',
@@ -81,7 +111,13 @@ const AboutSection = () => {
       id: 'general',
       title: 'En General',
       icon: Info,
-      position: 'bottom-1/3 left-0',
+      position: { bottom: '15%', right: '40%' },
+      colors: {
+        bg: 'from-indigo-500 to-blue-500',
+        border: 'border-indigo-400',
+        text: 'text-indigo-600',
+        sectionBg: 'from-indigo-50 via-blue-50 to-indigo-100'
+      },
       content: {
         title: 'ASONIC en General',
         description: 'Con más de 25 años de experiencia, hemos apoyado a más de 1000 familias. Contamos con un equipo multidisciplinario de profesionales y voluntarios comprometidos. Nuestras instalaciones incluyen dormitorios, cocina, áreas de recreación y espacios de apoyo psicológico.',
@@ -90,8 +126,13 @@ const AboutSection = () => {
     }
   ];
 
+  const selectedBubble = thoughtBubbles.find(b => b.id === selectedTopic);
+  const sectionBgClass = selectedBubble 
+    ? `bg-gradient-to-br ${selectedBubble.colors.sectionBg}` 
+    : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50';
+
   return (
-    <section id="conocenos" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 overflow-hidden">
+    <section id="conocenos" className={`py-20 overflow-hidden transition-all duration-1000 ${sectionBgClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -110,9 +151,9 @@ const AboutSection = () => {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
             <div className="relative w-96 h-96 mx-auto">
-              {/* Niño en el centro (espacio reservado) */}
+              {/* Niño en el centro (sin animación bounce) */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-orange-200 to-yellow-200 rounded-full shadow-2xl flex items-center justify-center animate-bounce">
+                <div className="w-32 h-32 bg-gradient-to-br from-orange-200 to-yellow-200 rounded-full shadow-2xl flex items-center justify-center">
                   <div className="text-center">
                     <span className="text-4xl">👶</span>
                     <p className="text-xs text-gray-600 mt-1">Niño PNG</p>
@@ -120,29 +161,30 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* Burbujas de pensamiento */}
+              {/* Burbujas de pensamiento organizadas alrededor */}
               {thoughtBubbles.map((bubble, index) => (
                 <button
                   key={bubble.id}
                   onClick={() => setSelectedTopic(selectedTopic === bubble.id ? null : bubble.id)}
-                  className={`absolute ${bubble.position} transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 hover:scale-110 ${
+                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 hover:scale-110 ${
                     selectedTopic === bubble.id ? 'scale-110 z-10' : 'hover:z-10'
                   }`}
                   style={{ 
+                    ...bubble.position,
                     animationDelay: `${index * 200}ms`,
                     animation: isVisible ? 'fadeInScale 0.8s ease-out forwards' : 'none'
                   }}
                 >
                   <div className={`relative bg-white rounded-2xl p-4 shadow-xl border-2 transition-all duration-300 ${
                     selectedTopic === bubble.id 
-                      ? 'border-orange-400 bg-gradient-to-br from-orange-50 to-yellow-50' 
-                      : 'border-blue-200 hover:border-blue-400'
+                      ? `${bubble.colors.border} bg-gradient-to-br from-white to-gray-50` 
+                      : 'border-gray-200 hover:border-gray-400'
                   }`}>
                     <div className="flex flex-col items-center space-y-2">
                       <div className={`p-2 rounded-full transition-colors duration-300 ${
                         selectedTopic === bubble.id 
-                          ? 'bg-orange-500 text-white' 
-                          : 'bg-blue-100 text-blue-600'
+                          ? `bg-gradient-to-r ${bubble.colors.bg} text-white` 
+                          : `bg-gray-100 ${bubble.colors.text}`
                       }`}>
                         <bubble.icon className="w-5 h-5" />
                       </div>
@@ -154,8 +196,8 @@ const AboutSection = () => {
                     {/* Cola de la burbuja */}
                     <div className={`absolute w-4 h-4 transform rotate-45 ${
                       selectedTopic === bubble.id 
-                        ? 'bg-gradient-to-br from-orange-50 to-yellow-50 border-r-2 border-b-2 border-orange-400' 
-                        : 'bg-white border-r-2 border-b-2 border-blue-200'
+                        ? `bg-gradient-to-br from-white to-gray-50 border-r-2 border-b-2 ${bubble.colors.border}` 
+                        : 'bg-white border-r-2 border-b-2 border-gray-200'
                     }`} 
                     style={{
                       bottom: '-8px',
@@ -179,7 +221,7 @@ const AboutSection = () => {
                   return topic ? (
                     <>
                       <div className="flex items-center mb-6">
-                        <div className="bg-gradient-to-br from-orange-500 to-yellow-500 p-3 rounded-2xl mr-4 shadow-lg">
+                        <div className={`bg-gradient-to-br ${topic.colors.bg} p-3 rounded-2xl mr-4 shadow-lg`}>
                           <topic.icon className="w-8 h-8 text-white" />
                         </div>
                         <h3 className="text-3xl font-bold text-gray-900">
@@ -200,8 +242,8 @@ const AboutSection = () => {
                       </p>
                       
                       <div className="mt-6 flex justify-center">
-                        <div className="bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full">
-                          <span className="text-blue-800 font-semibold">
+                        <div className={`bg-gradient-to-r ${topic.colors.bg} bg-opacity-10 px-6 py-3 rounded-full`}>
+                          <span className={`${topic.colors.text} font-semibold`}>
                             ¡Conoce más sobre nosotros!
                           </span>
                         </div>
@@ -224,7 +266,7 @@ const AboutSection = () => {
                   Selecciona cualquiera de las burbujas de pensamiento para conocer más 
                   sobre ASONIC, nuestra misión, visión y todo lo que hacemos por los niños con cáncer.
                 </p>
-                <div className="mt-6 animate-bounce">
+                <div className="mt-6">
                   <span className="text-4xl">👈</span>
                 </div>
               </div>

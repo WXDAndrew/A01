@@ -81,8 +81,8 @@ const Footer = () => {
                 </button>
                 
                 {/* Dropdown de compartir */}
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto z-50">
-                  <div className="bg-white rounded-2xl shadow-2xl p-4 grid grid-cols-5 gap-3 w-80 hover:opacity-100 hover:pointer-events-auto">
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 group-hover:delay-200">
+                  <div className="bg-white rounded-2xl shadow-2xl p-4 grid grid-cols-5 gap-3 w-80 hover:opacity-100 hover:pointer-events-auto hover:delay-0">
                     {socialNetworks.map((network) => (
                       <a
                         key={network.name}
